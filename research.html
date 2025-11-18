@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - 전산유체역학 연구실 (CFD Lab)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png"> 
+</head>
+<body>
+
+    <div class="page-container"> 
+        <div class="top-bar">
+            <div class="top-bar-container">
+                <span class="lab-name">전산유체역학 연구실 (CFD Lab)</span>
+                 <div class="top-links">
+                      <a href="index.html">Home</a>
+                      <a href="#">English</a>
+                </div>
+            </div>
+        </div>
+
+        <header>
+             <div class="header-container">
+                 <div class="logo-container">
+                     <a href="index.html">
+                         <img src="images/lab_logo.png" alt="전산유체역학 연구실 로고" class="header-logo">
+                     </a>
+                 </div>
+                  <!-- (★모든 HTML 파일의 이 부분을 교체하세요★) -->
+<nav>
+    <ul>
+        <!-- 1. 구성원 (하위 메뉴 있음) -->
+        <li class="has-dropdown">
+            <a href="people.html">구성원</a>
+            <ul class="dropdown-menu">
+                <li><a href="people.html#professor">교수</a></li>
+                <li><a href="people.html#students">재학생</a></li>
+                <li><a href="people.html#alumni">졸업생</a></li>
+            </ul>
+        </li>
+
+        <!-- 2. 연구주제 (하위 메뉴 있음) -->
+        <li class="has-dropdown">
+            <a href="research.html">연구주제</a>
+            <ul class="dropdown-menu">
+                <!-- (클릭 시 #research-a (진행중 연구 A)로 이동) -->
+                <li><a href="research.html#research-a">진행중인 연구</a></li> 
+                <li><a href="research.html#completed">완료한 연구</a></li>
+            </ul>
+        </li>
+
+        <!-- 3. 연구논문 (하위 메뉴 있음) -->
+        <li class="has-dropdown">
+            <a href="publications.html">연구논문</a>
+            <ul class="dropdown-menu">
+                <li><a href="publications.html#int-journals">국제 학술지</a></li>
+                <li><a href="publications.html#dom-journals">국내 학술지</a></li>
+                <li><a href="publications.html#int-conferences">국제 학회</a></li>
+                <li><a href="publications.html#dom-conferences">국내 학회</a></li>
+                <li><a href="publications.html#patents">특허</a></li>
+            </ul>
+        </li>
+
+        <!-- 4. 강의 (하위 메뉴 있음) -->
+        <li class="has-dropdown">
+            <a href="lecture.html">강의</a>
+            <ul class="dropdown-menu">
+                <li><a href="lecture.html#lecture-main">강의 소개</a></li>
+                <li><a href="lecture.html#undergrad-1">대학교 강의</a></li>
+                <li><a href="lecture.html#grad-1">대학원 강의</a></li>
+            </ul>
+        </li>
+        
+        <!-- 5. Contact (하위 메뉴 없음) -->
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+    </ul>
+</nav>
+             </div>
+        </header>
+
+        <main>
+            <div class="breadcrumb">
+                Home / 연구주제 / <span id="current-location">진행중인 연구 / A</span>
+            </div>
+            
+            <div class="people-container">
+                
+                <aside class="people-sidebar">
+                    <ul>
+                        <li class="has-submenu">
+                            <a href="#" class="sidebar-link" onclick="event.preventDefault(); return false;">
+                                &gt; 진행중인 연구
+                            </a>
+                            
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#" class="sidebar-link active" onclick="showSection('research-a', this)">
+                                        &gt; A
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sidebar-link" onclick="showSection('research-b', this)">
+                                        &gt; B
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sidebar-link" onclick="showSection('research-c', this)">
+                                        &gt; C
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#" class="sidebar-link" onclick="showSection('completed', this)">
+                                &gt; 완료한 연구
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+                
+                <div class="people-content">
+                    
+                    <section id="research-a" class="content-section">
+                        <h3>진행중인 연구 A: [연구 A의 전체 제목]</h3>
+                        
+                        <img src="images/research_a.jpg" alt="진행중인 연구 A 대표 이미지" class="research-image">
+                        
+                        <p>이곳에 '진행중인 연구 A'에 대한 자세한 설명을 작성합니다. 연구 배경, 목표, 현재 진행 상황 등을 서술할 수 있습니다.</p>
+                        <p>관련 논문이나 프로젝트 링크를 추가할 수도 있습니다.</p>
+                    </section>
+                    
+                    <section id="research-b" class="content-section hidden">
+                        <h3>진행중인 연구 B: [연구 B의 전체 제목]</h3>
+                        <img src="images/research_b.jpg" alt="진행중인 연구 B 대표 이미지" class="research-image">
+                        <p>이곳에 '진행중인 연구 B'에 대한 자세한 설명을 작성합니다.</p>
+                    </section>
+                    
+                    <section id="research-c" class="content-section hidden">
+                        <h3>진행중인 연구 C: [연구 C의 전체 제목]</h3>
+                        <img src="images/research_c.jpg" alt="진행중인 연구 C 대표 이미지" class="research-image">
+                        <p>이곳에 '진행중인 연구 C'에 대한 자세한 설명을 작성합니다.</p>
+                    </section>
+
+                    <section id="completed" class="content-section hidden">
+                        <h3>완료한 연구</h3>
+                        <ul>
+                            <li>회전하는 블레이드 주위의 유동가시화 및 전산유동해석</li>
+                            <li>덕트형상에 따른 동축반전 로터블레이드 주위의 전산유동해석</li>
+                            <li>틸트각 변화에 따른 틸트로터 항공기 주위의 유동해석</li>
+                            <li>Numerical simulation of laminar forced convection heat transfer of Al2O3-water nanofluid in a pipe with return bend</li>
+                            <li>열사이펀의 형상비와 충전율에 따른 열전달 성능 해석</li>
+                            <li>Effects of mass transfer time relaxation parameters on condensation in a thermosyphon</li>
+                            <li>진동형 히트 파이프에서 튜브의 지름과 개수에 따른 전산 열유동해석</li>
+                            <li>공개 소스코드를 이용한 진동형 히트파이프에 대한 수치해석</li>
+                            <li>Numerical simulation of oscillatory flow and heat transfer in pulsating heat pipes with multi-turns using OpenFOAM</li>
+                            <li>다양한 매개변수에 따른 관내 나노유체의 성능지수</li>
+                            <li>개방형 구조의 진동형 히트파이프의 응축부 길이에 따른 추력 및 유동 가시화</li>
+                            <li>전산 해석에서 압축성 작동유체의 상변화와 고체 벽 영역이 진동형 히트파이프에 미치는 영향</li>
+                        </ul>
+                    </section>
+                    
+                </div>
+            </div>
+        </main>
+
+    </div> 
+    <footer>
+        <p>&copy; Copyright (c) 2025 scnu CFD Lab. All rights reserved.</p>
+        <p>[Sunchon National University, Mechanical & Aerospace Engineering]</p>
+        <p>[57922 전라남도 순천시 중앙로 255(석현동)]</p>
+    </footer>
+
+    <script>
+        // 1. 탭을 보여주는 함수
+        function showSection(sectionId, clickedLink) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+            
+            document.querySelectorAll('.sidebar-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            if (clickedLink) {
+                clickedLink.classList.add('active');
+                
+                // 하위 메뉴 안에 있다면 펼쳐주기
+                const subMenu = clickedLink.closest('.sub-menu');
+                if (subMenu) {
+                    subMenu.style.display = 'block';
+                }
+
+                let locationText = clickedLink.textContent.replace('>', '').trim();
+                // 부모 메뉴 텍스트 찾기 (Breadcrumb용)
+                const parentLi = clickedLink.closest('.has-submenu');
+                if (parentLi) {
+                    const parentLink = parentLi.querySelector(':scope > a'); // 직계 자식 a 태그만
+                    if (parentLink) {
+                         const parentText = parentLink.textContent.replace('>', '').trim();
+                         locationText = parentText + " / " + locationText;
+                    }
+                }
+                document.getElementById('current-location').textContent = locationText;
+            }
+        }
+
+        // 2. 해시 확인 및 탭 열기 함수
+        function checkHashAndShowSection() {
+            const hash = window.location.hash; // 예: "#research-b"
+            if (hash) {
+                const targetId = hash.substring(1); 
+                const targetLink = document.querySelector(`.people-sidebar a[onclick*="'${targetId}'"]`);
+                if (targetLink) {
+                    showSection(targetId, targetLink);
+                }
+            } else {
+                // (★수정됨★) 기본값: 진행중인 연구 A (research-a)
+                const defaultLink = document.querySelector(`.people-sidebar a[onclick*="'research-a'"]`);
+                if(defaultLink) showSection('research-a', defaultLink);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', checkHashAndShowSection);
+        window.addEventListener('hashchange', checkHashAndShowSection);
+    </script>
+</body>
+</html>

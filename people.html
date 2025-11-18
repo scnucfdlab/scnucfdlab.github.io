@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People - 전산유체역학 연구실 (CFD Lab)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png"> 
+</head>
+<body>
+
+    <div class="page-container"> 
+        <div class="top-bar">
+            <div class="top-bar-container">
+                <span class="lab-name">전산유체역학 연구실 (CFD Lab)</span>
+                 <div class="top-links">
+                      <a href="index.html">Home</a>
+                      <a href="#">English</a>
+                </div>
+            </div>
+        </div>
+
+        <header>
+             <div class="header-container">
+                 <div class="logo-container">
+                     <a href="index.html">
+                         <img src="images/lab_logo.png" alt="전산유체역학 연구실 로고" class="header-logo">
+                     </a>
+                 </div>
+                  <nav>
+    <ul>
+        <!-- 1. 구성원 (하위 메뉴 있음) -->
+        <li class="has-dropdown">
+            <a href="people.html">구성원</a>
+            <ul class="dropdown-menu">
+                <li><a href="people.html#professor">교수</a></li>
+                <li><a href="people.html#students">재학생</a></li>
+                <li><a href="people.html#alumni">졸업생</a></li>
+            </ul>
+        </li>
+
+        <!-- 2. 연구주제 (하위 메뉴 있음) -->
+        <li class="has-dropdown">
+            <a href="research.html">연구주제</a>
+            <ul class="dropdown-menu">
+                <!-- (클릭 시 #research-a (진행중 연구 A)로 이동) -->
+                <li><a href="research.html#research-a">진행중인 연구</a></li> 
+                <li><a href="research.html#completed">완료한 연구</a></li>
+            </ul>
+        </li>
+
+        <!-- 3. 연구논문 (하위 메뉴 있음) -->
+        <li class="has-dropdown">
+            <a href="publications.html">연구논문</a>
+            <ul class="dropdown-menu">
+                <li><a href="publications.html#int-journals">국제 학술지</a></li>
+                <li><a href="publications.html#dom-journals">국내 학술지</a></li>
+                <li><a href="publications.html#int-conferences">국제 학회</a></li>
+                <li><a href="publications.html#dom-conferences">국내 학회</a></li>
+                <li><a href="publications.html#patents">특허</a></li>
+            </ul>
+        </li>
+
+        <!-- 4. 강의 (하위 메뉴 있음) -->
+        <li class="has-dropdown">
+            <a href="lecture.html">강의</a>
+            <ul class="dropdown-menu">
+                <li><a href="lecture.html#lecture-main">강의 소개</a></li>
+                <li><a href="lecture.html#undergrad-1">대학교 강의</a></li>
+                <li><a href="lecture.html#grad-1">대학원 강의</a></li>
+            </ul>
+        </li>
+        
+        <!-- 5. Contact (하위 메뉴 없음) -->
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+    </ul>
+</nav>
+             </div>
+        </header>
+
+        <main>
+            <div class="breadcrumb">
+                Home / 구성원 / <span id="current-location">교수</span>
+            </div>
+            
+            <div class="people-container">
+                
+                <aside class="people-sidebar">
+                    <ul>
+                        <li>
+                            <a href="#" class="sidebar-link active" onclick="showSection('professor', this)">
+                                &gt; 교수
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="sidebar-link" onclick="showSection('students', this)">
+                                &gt; 재학생
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="sidebar-link" onclick="showSection('alumni', this)">
+                                &gt; 졸업생
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+                
+                <div class="people-content">
+                    
+                    <section id="professor" class="content-section">
+                        <div class="professor-card">
+                            <div class="professor-details">
+                                <h3>최종욱 교수 (Choi, Jong Wook)</h3>
+                                <p>국립순천대학교 기계우주항공공학부</p>
+                                <ul>
+                                    <li><strong>전공:</strong> 전산유체역학, 열전달</li>
+                                    <li><strong>연구실:</strong> 공과대학 D2 331호</li>
+                                    <li><strong>연락처:</strong> 061-750-3826</li>
+                                    <li><strong>이메일:</strong> choijw@scnu.ac.kr</li>
+                                </ul>
+                            </div>
+                            <div class="professor-photo">
+                                <img src="images/prof_photo.jpg" alt=" 교수님 사진">
+                            </div>
+                        </div>
+                        
+                        <div class="professor-career">
+                            <h4>학력/경력</h4>
+                            <ul>
+                                <li>[전남대학교 기계설계학과, 공학사] </li>
+                                <li>[전남대학교 기계공학과, 공학석사]</li>
+                                <li>[전남대학교 기계공학과, 공학박사]</li>
+                                <li>[POSCO 기술연구소]</li>
+                                <li>[예: 1234.01 - 현재: 국립순천대학교 기계우주항공공학부 교수]</li>
+                                <li>[예: 1999.09 - 2004.08: OOO 대학교 (공학박사)]</li>
+                            </ul>
+                        </div>
+                    </section>
+                    
+                    <section id="students" class="content-section hidden">
+                        <h3>재학생</h3>
+                        
+                        <div class="student-card-list">
+                    
+                            <div class="student-card">
+                                <div class="student-details">
+                                    <ul>
+                                        <li><strong>이름:</strong> student1 (O O Lee)</li>
+                                        <li><strong>과정:</strong> 대학원 석사과정</li>
+                                        <li><strong>연구주제:</strong> 가나다라 (abcd)</li>
+                                        <li><strong>이메일:</strong> <a href="mailto:apple@naver.com">apple@naver.com</a></li>
+                                    </ul>
+                                </div>
+                                <div class="student-photo">
+                                    <img src="images/student1.jpg" alt="student1 학생 사진">
+                                </div>
+                            </div>
+                    
+                            <div class="student-card">
+                                <div class="student-details">
+                                    <ul>
+                                        <li><strong>이름:</strong> student2 (O O Park)</li>
+                                        <li><strong>과정:</strong> 학부연구생</li>
+                                        <li><strong>연구주제:</strong> 가나다라 (abcd)</li>
+                                        <li><strong>이메일:</strong> <a href="mailto:banana@naver.com">banana@naver.com</a></li>
+                                    </ul>
+                                </div>
+                                <div class="student-photo">
+                                    <img src="images/student2.jpg" alt="student2 학생 사진">
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </section>
+                    
+                    <section id="alumni" class="content-section hidden">
+                        <h3>졸업생</h3>
+                        <p></p>
+                    </section>
+                    
+                </div>
+            </div>
+        </main>
+
+    </div> 
+    <footer>
+        <p>&copy; Copyright (c) 2025 scnu CFD Lab. All rights reserved.</p>
+        <p>[Sunchon National University, Mechanical & Aerospace Engineering]</p>
+        <p>[57922 전라남도 순천시 중앙로 255(석현동)]</p>
+    </footer>
+
+<script>
+    // 1. 탭을 보여주는 함수 (기존과 동일)
+    function showSection(sectionId, clickedLink) {
+        // 모든 섹션 숨기기
+        document.querySelectorAll('.content-section').forEach(section => {
+            section.classList.add('hidden');
+        });
+        
+        // 선택된 섹션 보이기
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.classList.remove('hidden');
+        }
+        
+        // 사이드바 링크 활성화 상태 초기화 및 갱신
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        // 클릭된 링크가 있으면 active 추가 (사이드바 링크일 경우)
+        if (clickedLink) {
+            clickedLink.classList.add('active');
+            
+            // 브레드크럼 텍스트 업데이트
+            let locationText = clickedLink.textContent.replace('>', '').trim();
+            document.getElementById('current-location').textContent = locationText;
+        }
+    }
+
+    // 2. URL의 해시(#)를 확인하고 해당 탭을 여는 함수
+    function checkHashAndShowSection() {
+        const hash = window.location.hash; // 예: "#students"
+        if (hash) {
+            const targetId = hash.substring(1); // 예: "students"
+            
+            // 해당 ID를 여는 사이드바 링크 찾기
+            const targetLink = document.querySelector(`.people-sidebar a[onclick*="'${targetId}'"]`);
+            
+            if (targetLink) {
+                // 링크가 있으면 그 링크를 클릭한 것과 같은 효과를 냄
+                showSection(targetId, targetLink);
+            }
+        } else {
+            // 해시가 없으면 기본적으로 '교수(#professor)' 탭 보여주기
+            const defaultLink = document.querySelector(`.people-sidebar a[onclick*="'professor'"]`);
+            showSection('professor', defaultLink);
+        }
+    }
+
+    // 3. (중요) 페이지 로드 시 실행
+    document.addEventListener('DOMContentLoaded', checkHashAndShowSection);
+
+    // 4. (★핵심★) 같은 페이지 내에서 해시가 변경될 때(nav 클릭 시) 실행
+    window.addEventListener('hashchange', checkHashAndShowSection);
+    
+</script>
+
+</body>
+</html>

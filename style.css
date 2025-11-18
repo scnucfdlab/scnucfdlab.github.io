@@ -1,0 +1,673 @@
+/* 기본 설정 */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* 전체 배경색 */
+    color: #333;
+
+    /* (여기서부터 3줄 추가) --- */
+    min-height: 100vh; /* (1) 최소 높이를 화면 높이(100vh)로 설정 */
+    display: flex; /* (2) Flexbox 레이아웃 사용 */
+    flex-direction: column; /* (3) 자식 요소들을 세로로 쌓음 */
+}
+
+/* 링크 기본 스타일 */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- 최상단 Top Bar --- */
+.top-bar {
+    background-color: #003366; /* 배경색은 100% 유지 */
+    color: white;
+    padding: 8px 0; /* (수정) 위아래 여백만 */
+    font-size: 14px;
+}
+
+/* (신규) Top Bar 내부 컨테이너 (중앙 정렬용) */
+.top-bar-container {
+    width: 100%;
+    max-width: 1100px; /* main과 동일한 최대 너비 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 0 40px; /* 기존 좌우 패딩 40px */
+    box-sizing: border-box; 
+    
+    /* (이동) flex 속성을 .top-bar에서 여기로 이동 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar .lab-name {
+    font-weight: bold;
+}
+
+.top-bar .top-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+.top-bar .top-links a:hover {
+    text-decoration: underline;
+}
+
+/* --- 메인 Header (로고 + 네비게이션) --- */
+header {
+    background-color: #ffffff;
+    padding: 15px 0; /* (수정) 좌우 패딩 0 */
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* (신규) Header 내부 컨테이너 (중앙 정렬용) */
+.header-container {
+    width: 100%;
+    max-width: 1100px; /* main과 동일한 최대 너비 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 0 40px; /* 기존 좌우 패딩 40px */
+    box-sizing: border-box;
+
+    /* (이동) flex 속성을 header에서 여기로 이동 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    height: 40px;
+    vertical-align: middle;
+}
+
+/* 네비게이션 메뉴 */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* 메뉴 아이템 가로 배치 */
+}
+
+nav ul li {
+    margin-left: 25px; /* 메뉴 아이템 사이 간격 */
+    position: relative; /* (★이 줄 추가) 하위 메뉴의 기준점 */
+}
+
+nav ul li a {
+    color: #003366; /* 메뉴 글자색 */
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.2s; /* 호버 시 색상 변화 부드럽게 */
+}
+nav ul li a:hover {
+    color: #0056b3; /* 호버 시 색상 */
+    text-decoration: none;
+}
+
+/* --- (신규) 헤더 드롭다운 메뉴 스타일 --- */
+.dropdown-menu {
+    display: none; /* (1) 평소엔 숨김 */
+    position: absolute; /* (2) 부모(li) 기준으로 띄움 */
+    top: 100%; /* (3) 부모 li 바로 아래에 붙임 */
+    left: -20px; /* (4) 왼쪽 정렬 (메뉴 이름 길이에 따라 조절) */
+    
+    background-color: white;
+    min-width: 180px; /* 메뉴 최소 너비 */
+    border: 1px solid #e0e0e0;
+    border-top: 3px solid #003366; /* 상단 강조선 */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.07);
+    z-index: 1000;
+
+    /* (기본 ul/li 스타일 초기화) */
+    list-style: none;
+    margin: 0;
+    padding: 5px 0; /* 메뉴 상하 여백 */
+}
+
+/* 2단 메뉴 항목 <li> */
+.dropdown-menu li {
+    margin-left: 0; /* nav ul li의 간격 초기화 */
+    width: 100%;
+}
+
+/* 2단 메뉴 링크 <a> */
+.dropdown-menu li a {
+    padding: 10px 20px;
+    display: block; /* 링크를 한 줄 꽉 차게 */
+    font-weight: normal; /* 굵기 보통 */
+    font-size: 15px;
+    color: #333;
+    white-space: nowrap; /* 줄바꿈 방지 */
+    transition: background-color 0.2s, color 0.2s;
+}
+.dropdown-menu li a:hover {
+    background-color: #f4f4f4; /* 마우스 올리면 배경색 */
+    color: #003366;
+    text-decoration: none;
+}
+
+/* (중요) 부모 <li>에 마우스를 올리면(hover) 하위 메뉴 <ul> 보여주기 */
+nav ul li:hover > .dropdown-menu {
+    display: block;
+}
+
+/* --- 메인 콘텐츠 영역 (중앙 정렬) --- */
+main {
+    width: 100%;
+    max-width: 1100px; /* 콘텐츠 최대 너비를 1100px로 설정 (이미지와 이미지 사이 흰색 여백) */
+    margin: 20px auto; /* 위아래 20px, 좌우 자동 (가운데 정렬) */
+    padding: 0; /* 좌우 안쪽 여백 */
+    box-sizing: border-box;
+}
+
+/* --- 대표 사진 섹션 --- */
+#hero-image {
+    width: 100%;
+    height: 320px; /* 원하는 상하 너비(높이)를 고정. 450px는 예시 */
+    overflow: hidden; /* (추가) 이미지가 영역을 벗어나면 숨김 */
+    margin-bottom: 30px; /* 사진 아래 여백 */
+    border-top: 1px solid #e0e0e0;  /* (수정) 상단 테두리 */
+    border-bottom: 1px solid #e0e0e0; /* (수정) 하단 테두리 */
+    box-sizing: border-box;
+}
+#hero-image img {
+    width: 100%;
+    height: 100%; /* (추가) 부모 영역(#hero-image)을 꽉 채움 */
+    object-fit: cover; /* (추가) 비율을 유지하며 꽉 채우기 (가장 중요!) */
+    display: block; /* 이미지 하단 불필요한 여백 제거 */
+}
+
+/* --- 연구실 소개 섹션 (둥근 박스) --- */
+#about {
+    margin-bottom: 30px; /* 섹션 아래 여백 */
+}
+#about .about-box {
+    background-color: #ffffff; /* 흰색 배경 */
+    border: 1px solid #003366; /* 진한 파란색 테두리 */
+    border-radius: 20px; /* 요청하신 둥근 모서리 */
+    padding: 40px 60px; /* 위아래 40px, 좌우 60px 패딩 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
+#about .about-box h2 {
+    margin-top: 0;
+    color: #003366;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+#about .about-box p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+}
+
+
+/* --- 최근 뉴스 섹션 --- */
+#news {
+    background-color: #ffffff;
+    padding: 30px 50px; /* 위아래 30px, 좌우 50px 패딩 */
+    border-radius: 8px; /* 메인 콘텐츠 박스들과 동일하게 둥글게 */
+    border: 1px solid #e0e0e0;
+    margin-bottom: 30px; /* 푸터 위 여백 */
+}
+#news h2 {
+    margin-top: 0;
+    color: #003366;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+#news ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#news ul li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #e0e0e0; /* 점선 구분선 */
+    font-size: 16px;
+}
+#news ul li:last-child {
+    border-bottom: none; /* 마지막 항목은 구분선 없음 */
+}
+
+
+/* --- 푸터 (저작권) --- */
+footer {
+    background-color: #003366; /* 진한 파란색 배경 */
+    color: white;
+    padding: 30px 40px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid #e0e0e0;
+}
+footer p {
+    margin: 5px 0;
+}
+
+/* --- 
+   People Page Styles (교수, 재학생 모두 포함)
+   --- */
+
+/* 공통: 콘텐츠 숨기기용 */
+.hidden {
+    display: none;
+}
+
+/* 현재 위치 (Breadcrumb) */
+.breadcrumb {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* People 페이지 전체 레이아웃 (사이드바 + 콘텐츠) */
+.people-container {
+    display: flex;
+    gap: 30px; /* 사이드바와 콘텐츠 사이 간격 */
+}
+
+/* (A) 왼쪽 사이드바 */
+.people-sidebar {
+    width: 200px;
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    background-color: #ffffff;
+    height: fit-content; /* 내용물만큼만 높이 차지 */
+}
+.people-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.people-sidebar li a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+}
+/* 활성화된(클릭된) 메뉴 */
+.people-sidebar li a.active,
+.people-sidebar li a:hover {
+    background-color: #003366;
+    color: white;
+    text-decoration: none;
+}
+
+/* (B) 오른쪽 콘텐츠 영역 */
+.people-content {
+    flex: 1; /* 남은 공간을 모두 차지 */
+}
+
+/* 섹션 공통 제목 (교수, 재학생, 졸업생) */
+.content-section h3 {
+    font-size: 28px;
+    color: #003366;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* (B-1) 교수 카드 */
+.professor-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+}
+.professor-details h3 {
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.professor-details p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0 20px 0;
+}
+.professor-details ul {
+    list-style: none;
+    padding: 0;
+}
+.professor-details ul li {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+.professor-photo img {
+    width: 200px; /* 교수님 사진 크기 */
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+/* 교수 학력/경력 */
+.professor-career {
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+}
+.professor-career h4 {
+    font-size: 20px;
+    color: #003366;
+    margin-top: 0;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+.professor-career ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+.professor-career ul li {
+    margin-bottom: 10px;
+}
+
+/* (B-2) 재학생 카드 리스트 */
+.student-card {
+    display: flex;
+    justify-content: space-between; /* 양쪽 끝으로 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 15px; /* 카드 사이 간격 */
+    border-radius: 8px;
+}
+.student-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.student-details ul li {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+.student-details ul li:last-child {
+    margin-bottom: 0; /* 마지막 항목 여백 제거 */
+}
+.student-photo img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover; /* 비율 유지하며 꽉 채우기 */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 4px;
+    background-color: white;
+}
+
+
+/* --- 
+   Publications Page Styles 
+   --- */
+
+.publication-list {
+    list-style: none; /* 점 제거 */
+    padding: 0;
+    margin: 0;
+}
+
+/* 개별 논문 카드 */
+.publication-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    line-height: 1.7; /* 줄 간격 */
+}
+
+/* 논문 저자 */
+.publication-item .pub-authors {
+    display: block; /* 저자 이름은 한 줄 차지 */
+    font-size: 16px;
+    color: #333;
+}
+
+/* 저널/학회 정보 */
+.publication-item .pub-source {
+    display: block; /* 출처도 한 줄 차지 */
+    font-style: italic; /* 저널/학회 이름을 이탤릭체로 */
+    color: #555;
+    margin-top: 5px;
+}
+
+/* 논문 링크 */
+.publication-item .pub-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #007BFF;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+.publication-item .pub-link:hover {
+    text-decoration: none;
+    background-color: #f4f4f4;
+}
+
+
+/* --- 
+   Research Page Styles 
+   (이 코드가 style.css에 필요합니다!)
+   --- */
+
+/* (1) 사이드바 하위 메뉴 (sub-menu) 스타일 */
+.people-sidebar li.has-submenu {
+    position: relative; /* 하위 메뉴의 위치 기준점 */
+}
+
+/* 하위 메뉴 <ul> (평소엔 숨김) */
+.people-sidebar .sub-menu {
+    list-style: none;
+    padding: 5px 0 5px 20px; /* 왼쪽으로 살짝 들여쓰기 */
+    margin: 0;
+    background-color: #fcfcfc; /* 하위 메뉴 배경색 (선택) */
+    
+    display: none; /* (중요) 평소엔 이 코드로 숨겨져 있습니다 */
+}
+
+/* (중요) 부모 메뉴(li)에 마우스를 올리면(hover) 하위 메뉴(sub-menu)를 보여줌 */
+.people-sidebar li.has-submenu:hover > .sub-menu {
+    display: block; /* 마우스를 올리면 이 코드로 보이게 됩니다 */
+}
+
+/* 하위 메뉴 링크 <a> 스타일 */
+.people-sidebar .sub-menu li a {
+    padding: 8px 15px; /* 패딩 살짝 줄임 */
+    font-size: 15px; /* 폰트 살짝 작게 */
+    font-weight: normal; /* 폰트 굵기 보통 */
+    color: #444;
+}
+
+/* 하위 메뉴 링크 <a>가 활성화되거나 호버됐을 때 */
+.people-sidebar .sub-menu li a.active,
+.people-sidebar .sub-menu li a:hover {
+    background-color: #003366; /* 동일한 활성 색상 */
+    color: white;
+}
+
+/* (2) Research 콘텐츠 스타일 */
+.research-image {
+    width: 100%;
+    max-width: 400px; /* 이미지가 너무 커지는 것 방지 */
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    display: block; /* 이미지 가운데 정렬을 위해 */
+    margin-left: auto;
+    margin-right: auto;
+}
+.content-section p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* --- 
+   푸터 하단 고정용 (Flex Grow)
+   --- */
+.page-container {
+    flex: 1; /* (중요) 이 요소가 남는 공간을 모두 차지함 */
+}
+
+
+/* --- 
+   Lecture Page Styles 
+   --- */
+
+.lecture-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 개별 강의 카드 */
+.lecture-list li {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+}
+
+.lecture-list li h4 {
+    font-size: 20px;
+    color: #003366;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.lecture-list li p {
+    margin: 5px 0;
+    font-size: 15px;
+}
+
+
+/* --- 
+   Contact Page Styles (수정됨)
+   --- */
+
+.contact-wrapper {
+    display: flex;
+    flex-direction: column; /* (변경) 가로 배치를 세로 배치로 변경 */
+    gap: 30px; /* 두 영역(박스) 사이 간격 */
+    
+    /* (제거) 아래 4줄은 개별 박스로 이동시킴
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px; 
+    */
+}
+
+/* (수정) 텍스트 정보 박스 */
+.contact-info {
+    /* (제거) flex: 1; */
+    
+    /* (추가) 학술지 페이지처럼 사각형 틀 적용 */
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+/* (수정) 지도 박스 */
+.contact-map {
+    /* (제거) flex: 1.5; */
+    
+    /* (추가) 지도 영역도 사각형 틀 적용 */
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+/* (유지) 제목 스타일 */
+.contact-info h3, .contact-map h3 {
+    font-size: 24px;
+    color: #003366;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* (유지) 텍스트 스타일 */
+.contact-info p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* (유지) 지도 iframe 스타일 */
+.contact-map iframe {
+    width: 100%;
+    height: 450px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+
+    /* --- 미디어 쿼리 (모바일 반응형) --- */
+@media (max-width: 768px) {
+    /* (추가!) Top-Bar, Header 모바일 반응형 */
+    .top-bar, header {
+        padding: 10px 20px; /* 모바일에서 좌우 여백 줄이기 */
+    }
+    .top-bar .lab-name {
+        display: none; /* 모바일에서 실험실 이름 숨기기 (공간 확보) */
+    }
+
+    header {
+        flex-direction: column; /* 로고와 메뉴를 세로로 쌓기 */
+        align-items: center;
+    }
+    header nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap; /* 메뉴가 많으면 다음 줄로 */
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 5px 10px;
+    }
+    /* (여기까지 추가) */
+    /* ... (기존의 .top-bar, header 등 스타일은 그대로 둡니다) ... */
+
+
+    /* (여기서부터 People 페이지 반응형 추가) */
+    .people-container {
+        flex-direction: column; /* 세로로 쌓기 */
+    }
+    .people-sidebar {
+        width: 100%; /* 너비 꽉 채우기 */
+        box-sizing: border-box;
+    }
+    .professor-card {
+        flex-direction: column-reverse; /* 사진을 위로, 설명을 아래로 */
+        align-items: center;
+        text-align: center;
+    }
+    .professor-photo img {
+        margin-bottom: 20px;
+    }
+    /* (--- 여기까지 추가 ---) */
+
+    /* (여기서부터 Contact 페이지 반응형 추가) */
+    
+    .contact-map {
+        /* 모바일에서는 지도를 300px 높이로 줄임 */
+        height: 300px; 
+    }
+    .contact-map iframe {
+        height: 100%;
+    }
+    /* (--- 여기까지 추가 ---) */
+    
+}

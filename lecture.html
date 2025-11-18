@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의 - 전산유체역학 연구실 (CFD Lab)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png"> 
+</head>
+<body>
+
+    <div class="page-container"> 
+        <div class="top-bar">
+            <div class="top-bar-container">
+                <span class="lab-name">전산유체역학 연구실 (CFD Lab)</span>
+                 <div class="top-links">
+                      <a href="index.html">Home</a>
+                      <a href="#">English</a>
+                </div>
+            </div>
+        </div>
+
+        <header>
+             <div class="header-container">
+                 <div class="logo-container">
+                     <a href="index.html">
+                         <img src="images/lab_logo.png" alt="전산유체역학 연구실 로고" class="header-logo">
+                     </a>
+                 </div>
+                  <!-- (★모든 HTML 파일의 이 부분을 교체하세요★) -->
+<nav>
+    <ul>
+        <!-- 1. 구성원 (하위 메뉴 있음) -->
+        <li class="has-dropdown">
+            <a href="people.html">구성원</a>
+            <ul class="dropdown-menu">
+                <li><a href="people.html#professor">교수</a></li>
+                <li><a href="people.html#students">재학생</a></li>
+                <li><a href="people.html#alumni">졸업생</a></li>
+            </ul>
+        </li>
+
+        <!-- 2. 연구주제 (하위 메뉴 있음) -->
+        <li class="has-dropdown">
+            <a href="research.html">연구주제</a>
+            <ul class="dropdown-menu">
+                <!-- (클릭 시 #research-a (진행중 연구 A)로 이동) -->
+                <li><a href="research.html#research-a">진행중인 연구</a></li> 
+                <li><a href="research.html#completed">완료한 연구</a></li>
+            </ul>
+        </li>
+
+        <!-- 3. 연구논문 (하위 메뉴 있음) -->
+        <li class="has-dropdown">
+            <a href="publications.html">연구논문</a>
+            <ul class="dropdown-menu">
+                <li><a href="publications.html#int-journals">국제 학술지</a></li>
+                <li><a href="publications.html#dom-journals">국내 학술지</a></li>
+                <li><a href="publications.html#int-conferences">국제 학회</a></li>
+                <li><a href="publications.html#dom-conferences">국내 학회</a></li>
+                <li><a href="publications.html#patents">특허</a></li>
+            </ul>
+        </li>
+
+        <!-- 4. 강의 (하위 메뉴 있음) -->
+        <li class="has-dropdown">
+            <a href="lecture.html">강의</a>
+            <ul class="dropdown-menu">
+                <li><a href="lecture.html#lecture-main">강의 소개</a></li>
+                <li><a href="lecture.html#undergrad-1">대학교 강의</a></li>
+                <li><a href="lecture.html#grad-1">대학원 강의</a></li>
+            </ul>
+        </li>
+        
+        <!-- 5. Contact (하위 메뉴 없음) -->
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+    </ul>
+</nav>
+             </div>
+        </header>
+
+        <main>
+            <div class="breadcrumb">
+                Home / 강의 / <span id="current-location">강의 소개</span>
+            </div>
+            
+            <div class="people-container">
+                
+                <aside class="people-sidebar">
+                    <ul>
+                        <li>
+                            <a href="#" class="sidebar-link active" onclick="showSection('lecture-main', this)">
+                                &gt; 강의 소개
+                            </a>
+                        </li>
+                        
+                        <li class="has-submenu">
+                            <a href="#" class="sidebar-link" onclick="event.preventDefault(); return false;">
+                                &gt; 대학교
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#" class="sidebar-link" onclick="showSection('undergrad-1', this)">
+                                        &gt; 2025년 1학기
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sidebar-link" onclick="showSection('undergrad-2', this)">
+                                        &gt; 2025년 2학기
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li class="has-submenu">
+                            <a href="#" class="sidebar-link" onclick="event.preventDefault(); return false;">
+                                &gt; 대학원
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#" class="sidebar-link" onclick="showSection('grad-1', this)">
+                                        &gt; 2025년 1학기
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sidebar-link" onclick="showSection('grad-2', this)">
+                                        &gt; 2025년 2학기
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </aside>
+                
+                <div class="people-content">
+                    
+                    <section id="lecture-main" class="content-section">
+                        <h3>개설 강의</h3>
+                        <p>현재 1, 2학기에 개설된 주요 강의 목록입니다.<br>자세한 내용은 왼쪽 메뉴를 선택하여 확인하세요.</p>
+                        
+                        <ul class="lecture-list">
+                            <li>
+                                <h4>[대학교]</h4>
+                                <p> &#45;&#32;유체역학Ⅰ</p>
+                                <p> &#45;&#32;유체역학Ⅱ</p>
+                                <p> &#45;&#32;공기역학</p>
+                                <p> &#45;&#32;비행역학</p>
+                                <p> &#45;&#32;공학코딩</p>
+                            </li>
+                             <li>
+                                <h4>[대학원]</h4>
+                                <p> &#45;&#32;가나다라</p>
+                                <p> &#45;&#32;마바사아</p>
+                                <p> &#45;&#32;자차카파</p>
+                            </li>
+                            <li>
+                                <h4>[대학교] 유체역학 - 예시</h4>
+                                <p><strong>학기:</strong> 1학기</p>
+                                <p><strong>설명:</strong> 정지 및 운동 상태의 유체에 대한 기본 원리를 배웁니다.</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section id="undergrad-1" class="content-section hidden">
+                        <h3>대학교: 2025년 1학기</h3>
+                        <ul class="lecture-list">
+                            <li>
+                                <h4>유체역학Ⅰ (Fluid MechanicsⅠ)</h4>
+                                <p><strong>과목코드:</strong> MS0655</p>
+                                <p>
+                                    <strong>설명:</strong> 비행기, 선박, 자동차와 같은 수송기계나 건축기계, 환경기계 및 에너지 변환을 위한 장치 등에 유체역학적 개념이 많이 적용되고 있습니다.
+                                    이러한 개념을 바탕으로 유체정역학 및 유체운동학에 대하여 공부하고, 베르누이방정식을 이용한 문제해결 능력을 습득합니다.
+                                    또한, 차원해석과 모델링에 대한 학습을 통하여 실험적 접근방법에 대하여 이해합니다. 
+                                </p>
+                            </li>
+                            <li>
+                                <h4>공기역학 (Aerodynamics)</h4>
+                                <p><strong>과목코드:</strong> MS0683</p>
+                                <p>
+                                    <strong>설명:</strong> 공기역학에 대한 기본 원리를 파악하고, 연속방정식, 운동량방정식, 에너지방정식으로 이루어진 유체 지배방정식에 대한 풀이과정을 이해를 합니다.
+                                    또한, 익형 주위의 비압축성유동 및 3차원 비압축성 유동에 대한 해석방법을 익힙니다.
+                                </p>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <section id="undergrad-2" class="content-section hidden">
+                        <h3>대학교: 2025년 2학기</h3>
+                        <ul class="lecture-list">
+                            <li>
+                                <h4>유체역학Ⅱ (Fluid MechanicsⅡ)</h4>
+                                <p><strong>과목코드:</strong> MS0658</p>
+                                <p>
+                                    <strong>설명:</strong> 많은 사업현장에서는 유체역학적 문제해결을 필요로 하고 있습니다.
+                                    본 교과목에서는 유체 지배방정식에 대한 이해와 이를 이용한 공학적 문제해결을 목적으로 합니다.
+                                    주요 학습목표는 다음과 같습니다.<br>
+                                    1. 내부유동과 외부유동의 특성을 이해하고, 이와 관련된 공학적 문제를 해결할 수 있습니다.<br>
+                                    2. 압축성 유동과 개수로 유동에 대한 유사성을 이해하고, 각각의 특성에 대하여 설명할 수 있습니다.<br>
+                                    3. 터보기계와 관련된 문제를 해결할 수 있고, 전산유동해석 방법을 이해할 수 있습니다.
+                                </p>
+                            </li>
+                            <li>
+                                <h4>공학코딩 (Coding for Engineering)</h4>
+                                <p><strong>과목코드:</strong> MS0688</p>
+                                <p>
+                                    <strong>설명:</strong> 이 수업에서는 인공지능에 대한 기본적인 원리를 이해하고, 프로그램 작성방법을 습득합니다.
+                                    구체적인 학습목표는 다음과 같습니다.<br>
+                                    1. 인공지능에 대한 기본원리를 이해할 수 있습니다.<br>
+                                    2. 인공신경망과 합성곱신경망에 대한 프로그램 작성을 할 수 있습니다.<br>
+                                    3. 공학문제를 해결하는데 인공지능을 활용할 수 있습니다.
+                                </p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section id="grad-1" class="content-section hidden">
+                        <h3>대학원: 2025년 1학기</h3>
+                        <ul class="lecture-list">
+                            <li>
+                                <h4>가나다라마 (ABCDE)</h4>
+                                <p><strong>과목코드:</strong> ABCD1234</p>
+                                <p><strong>설명:</strong> 가나다라마바사</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section id="grad-2" class="content-section hidden">
+                        <h3>대학원: 2025년 2학기</h3>
+                        <ul class="lecture-list">
+                            <li>
+                                <h4>바사아자차 (FGHIJ)</h4>
+                                <p><strong>과목코드:</strong> EFGH5678</p>
+                                <p><strong>설명:</strong> 아자차카파타하</p>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                </div>
+            </div>
+        </main>
+
+    </div> 
+    <!-- (2) 푸터 고정용 래퍼 끝 -->
+
+    <footer>
+        <p>&copy; Copyright (c) 2025 scnu CFD Lab. All rights reserved.</p>
+        <p>[Sunchon National University, Mechanical & Aerospace Engineering]</p>
+        <p>[57922 전라남도 순천시 중앙로 255(석현동)]</p>
+    </footer>
+
+    <!-- (스크립트는 수정할 필요 없이 그대로 작동합니다) -->
+    <script>
+        function showSection(sectionId, clickedLink) {
+            // 1. 모든 콘텐츠 섹션을 숨깁니다.
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // 2. 클릭된 섹션만 보여줍니다.
+            document.getElementById(sectionId).classList.remove('hidden');
+            
+            // 3. (중요) 사이드바의 '모든' 링크(하위 메뉴 포함)에서 'active' 클래스를 제거합니다.
+            document.querySelectorAll('.people-sidebar a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // 4. 클릭된 링크에만 'active' 클래스를 추가합니다.
+            clickedLink.classList.add('active');
+
+            // 5. (수정됨) 현재 위치(breadcrumb) 텍스트 변경
+            let locationText = "";
+            const childText = clickedLink.textContent.replace('>', '').trim();
+            
+            const subMenu = clickedLink.closest('.sub-menu');
+            
+            if (subMenu) {
+                const parentLi = subMenu.closest('.has-submenu');
+                const parentLink = parentLi.querySelector(':scope > a');
+                const parentText = parentLink.textContent.replace('>', '').trim();
+                locationText = parentText + " / " + childText;
+            } else {
+                locationText = childText;
+            }
+            
+            document.getElementById('current-location').textContent = locationText;
+        }
+        // ----------------------------------------------------
+    // (★ 이 부분을 복사해서 추가하세요 ★)
+    // ----------------------------------------------------
+    // 페이지가 로드되었을 때 URL의 해시(#)를 확인하는 스크립트
+    document.addEventListener('DOMContentLoaded', function() {
+        // 1. 현재 URL에서 해시(#) 값을 가져옵니다 (예: "#students")
+        const hash = window.location.hash;
+        
+        if (hash) {
+            // 2. 해시 값에서 '#'을 뺀 ID를 구합니다 (예: "students")
+            const targetId = hash.substring(1); 
+            
+            // 3. 사이드바에서 해당 ID를 가진 링크를 찾습니다.
+            // (예: onclick="showSection('students', this)")
+            const targetLink = document.querySelector(`.people-sidebar a[onclick*="'${targetId}'"]`);
+            
+            if (targetLink) {
+                // 4. 링크를 찾았다면, (사람 대신) 코드가 직접 클릭합니다.
+                targetLink.click();
+            }
+        }
+    });
+    // ---------------------------------------------------
+    </script>
+    
+</body>
+</html>
