@@ -93,7 +93,6 @@ nav ul {
 
 nav ul li {
     margin-left: 25px; /* 메뉴 아이템 사이 간격 */
-    position: relative; /* (★이 줄 추가) 하위 메뉴의 기준점 */
 }
 
 nav ul li a {
@@ -105,53 +104,6 @@ nav ul li a {
 nav ul li a:hover {
     color: #0056b3; /* 호버 시 색상 */
     text-decoration: none;
-}
-
-/* --- (신규) 헤더 드롭다운 메뉴 스타일 --- */
-.dropdown-menu {
-    display: none; /* (1) 평소엔 숨김 */
-    position: absolute; /* (2) 부모(li) 기준으로 띄움 */
-    top: 100%; /* (3) 부모 li 바로 아래에 붙임 */
-    left: -20px; /* (4) 왼쪽 정렬 (메뉴 이름 길이에 따라 조절) */
-    
-    background-color: white;
-    min-width: 180px; /* 메뉴 최소 너비 */
-    border: 1px solid #e0e0e0;
-    border-top: 3px solid #003366; /* 상단 강조선 */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.07);
-    z-index: 1000;
-
-    /* (기본 ul/li 스타일 초기화) */
-    list-style: none;
-    margin: 0;
-    padding: 5px 0; /* 메뉴 상하 여백 */
-}
-
-/* 2단 메뉴 항목 <li> */
-.dropdown-menu li {
-    margin-left: 0; /* nav ul li의 간격 초기화 */
-    width: 100%;
-}
-
-/* 2단 메뉴 링크 <a> */
-.dropdown-menu li a {
-    padding: 10px 20px;
-    display: block; /* 링크를 한 줄 꽉 차게 */
-    font-weight: normal; /* 굵기 보통 */
-    font-size: 15px;
-    color: #333;
-    white-space: nowrap; /* 줄바꿈 방지 */
-    transition: background-color 0.2s, color 0.2s;
-}
-.dropdown-menu li a:hover {
-    background-color: #f4f4f4; /* 마우스 올리면 배경색 */
-    color: #003366;
-    text-decoration: none;
-}
-
-/* (중요) 부모 <li>에 마우스를 올리면(hover) 하위 메뉴 <ul> 보여주기 */
-nav ul li:hover > .dropdown-menu {
-    display: block;
 }
 
 /* --- 메인 콘텐츠 영역 (중앙 정렬) --- */
@@ -202,34 +154,156 @@ main {
     line-height: 1.8;
     color: #555;
 }
+/* --- About 섹션 키워드 스타일 (추가됨) --- */
+
+/* 소개 문구 */
+.about-intro {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px; /* 키워드 박스와의 간격 */
+}
+
+/* 키워드 3단 그리드 컨테이너 */
+.keywords-grid {
+    display: flex;
+    justify-content: space-between; /* 좌우 정렬 */
+    gap: 20px; /* 카드 사이 간격 */
+}
+
+/* 개별 키워드 카드 */
+.keyword-item {
+    flex: 1; /* 3개 카드가 동일한 너비를 가짐 */
+    background-color: #f8f9fa; /* 아주 옅은 회색 배경 */
+    padding: 25px 15px;
+    border-radius: 15px; /* 둥근 모서리 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 부드러운 효과 */
+}
+
+/* 마우스를 올렸을 때 살짝 떠오르는 효과 */
+.keyword-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background-color: #fff;
+    border: 1px solid #003366; /* 테두리 색상 포인트 */
+}
+
+/* 이모지 아이콘 */
+.keyword-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+/* 키워드 제목 */
+.keyword-item h3 {
+    color: #003366;
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: bold;
+    border: none; /* 기존 h3 밑줄 제거 */
+}
+
+/* 키워드 설명 */
+.keyword-item p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
 
 
-/* --- 최근 뉴스 섹션 --- */
+/* --- 최근 뉴스 섹션 (리뉴얼) --- */
 #news {
     background-color: #ffffff;
-    padding: 30px 50px; /* 위아래 30px, 좌우 50px 패딩 */
-    border-radius: 8px; /* 메인 콘텐츠 박스들과 동일하게 둥글게 */
-    border: 1px solid #e0e0e0;
-    margin-bottom: 30px; /* 푸터 위 여백 */
+    padding: 40px 50px;
+    border-radius: 20px; /* About 박스와 통일감 있게 둥글게 */
+    border: 1px solid #003366;
+    margin: 0 20px 40px 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03); /* 살짝 그림자 추가 */
 }
 #news h2 {
     margin-top: 0;
     color: #003366;
     font-size: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eee; /* 제목 아래 밑줄 */
 }
-#news ul {
+
+/* 뉴스 리스트 (ul) */
+.news-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-#news ul li {
-    padding: 10px 0;
-    border-bottom: 1px dashed #e0e0e0; /* 점선 구분선 */
-    font-size: 16px;
+
+/* 개별 뉴스 항목 (li) */
+.news-list li {
+    display: flex; /* 날짜와 내용을 가로로 배치 */
+    align-items: center; /* 세로 중앙 정렬 */
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0; /* 항목 사이 옅은 선 */
+    transition: background-color 0.2s;
 }
-#news ul li:last-child {
-    border-bottom: none; /* 마지막 항목은 구분선 없음 */
+.news-list li:last-child {
+    border-bottom: none; /* 마지막 선 제거 */
+}
+.news-list li:hover {
+    background-color: #fafafa; /* 마우스 올리면 살짝 배경색 변경 */
+}
+
+/* 날짜 영역 */
+.news-date {
+    display: flex;
+    flex-direction: column; /* 연도와 날짜를 위아래로 */
+    align-items: center;
+    justify-content: center;
+    width: 80px; /* 너비 고정 */
+    min-width: 80px;
+    margin-right: 30px;
+    color: #003366;
+    border-right: 2px solid #eee; /* 날짜 오른쪽 구분선 */
+    padding-right: 20px;
+}
+.news-date .year {
+    font-size: 14px;
+    color: #888;
+}
+.news-date .date {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* 내용 영역 */
+.news-content {
+    flex: 1;
+    display: flex;
+    align-items: center; /* 뱃지와 제목 세로 중앙 정렬 */
+    flex-wrap: wrap; /* 모바일에서 줄바꿈 가능하게 */
+}
+
+/* 카테고리 뱃지 (공통) */
+.news-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    margin-right: 15px;
+    min-width: 60px;
+    text-align: center;
+}
+
+/* 뱃지 색상별 스타일 */
+.news-badge.award { background-color: #ff9800; } /* 주황색 (수상) */
+.news-badge.project { background-color: #2196f3; } /* 파란색 (과제) */
+.news-badge.conference { background-color: #4caf50; } /* 초록색 (학회) */
+
+/* 뉴스 제목 */
+.news-title {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
 }
 
 
@@ -274,6 +348,7 @@ footer p {
 .people-sidebar {
     width: 200px;
     border: 1px solid #e0e0e0;
+    border-radius: 12px;
     padding: 15px;
     background-color: #ffffff;
     height: fit-content; /* 내용물만큼만 높이 차지 */
@@ -290,7 +365,7 @@ footer p {
     color: #555;
     font-weight: bold;
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 20px;
 }
 /* 활성화된(클릭된) 메뉴 */
 .people-sidebar li a.active,
@@ -299,6 +374,7 @@ footer p {
     color: white;
     text-decoration: none;
 }
+
 
 /* (B) 오른쪽 콘텐츠 영역 */
 .people-content {
@@ -312,7 +388,6 @@ footer p {
     margin-top: 0;
     margin-bottom: 20px;
 }
-
 /* (B-1) 교수 카드 */
 .professor-card {
     display: flex;
@@ -321,6 +396,7 @@ footer p {
     background-color: #ffffff;
     padding: 30px;
     border: 1px solid #e0e0e0;
+    border-radius: 12px;
 }
 .professor-details h3 {
     font-size: 28px;
@@ -344,21 +420,25 @@ footer p {
     width: 200px; /* 교수님 사진 크기 */
     height: auto;
     border: 1px solid #ddd;
+    border-radius: 5px;
     padding: 5px;
 }
-/* 교수 학력/경력 */
+
+ /* 네모칸 사이 여백*/
 .professor-career {
     margin-top: 30px;
     background-color: #ffffff;
     padding: 30px;
     border: 1px solid #e0e0e0;
+    border-radius: 12px;
 }
+
 .professor-career h4 {
-    font-size: 20px;
-    color: #003366;
-    margin-top: 0;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
+    font-size: 20px;                             /* 학력/경력 폰트 사이즈*/
+    color: #003366;                            /* 학력/경력 폰트 색상*/
+    margin-top: 0;                               /* 학력/경력 글자와 네모박스 사이 간격*/
+    border-bottom: 2px solid #eee;             /* 학력/경력 글자 밑 회색 실선 두께*/
+    padding-bottom: 10px;                         /* 학력/경력 글자와 회색 실선 사이 간격*/
 }
 .professor-career ul {
     list-style: disc;
@@ -377,7 +457,7 @@ footer p {
     padding: 20px;
     border: 1px solid #e0e0e0;
     margin-bottom: 15px; /* 카드 사이 간격 */
-    border-radius: 8px;
+    border-radius: 12px;
 }
 .student-details ul {
     list-style: none;
@@ -416,7 +496,7 @@ footer p {
 .publication-item {
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 20px;
     margin-bottom: 15px;
     line-height: 1.7; /* 줄 간격 */
@@ -495,18 +575,60 @@ footer p {
     color: white;
 }
 
-/* (2) Research 콘텐츠 스타일 */
+/* --- 
+   Research Page Styles (수정됨) 
+   --- */
+
+/* 1. 제목 아래 회색 구분선 */
+.content-section h3 {
+    font-size: 28px;
+    color: #003366;
+    margin-top: 0;
+    margin-bottom: 20px;
+    
+    /* (추가됨) 회색 선 */
+    border-bottom: 2px solid #e0e0e0; 
+    padding-bottom: 15px; 
+}
+
+/* 2. 연구 이미지 (꽉 찬 너비) */
 .research-image {
     width: 100%;
-    max-width: 400px; /* 이미지가 너무 커지는 것 방지 */
-    height: auto;
-    border-radius: 8px;
+    max-width: 100%; /* (수정됨) 제한 없이 꽉 차게 */
+    height: 300px;
+    border-radius: 12px; /* 이미지도 둥글게 */
     border: 1px solid #ddd;
     margin-bottom: 20px;
-    display: block; /* 이미지 가운데 정렬을 위해 */
-    margin-left: auto;
-    margin-right: auto;
+    display: block;
 }
+
+/* 3. (신규) 연구 설명 박스 */
+.research-box {
+    background-color: #fcfcfc; /* 아주 연한 회색 배경 */
+    border: 1px solid #e0e0e0; /* 테두리 */
+    border-radius: 12px; /* 둥근 모서리 */
+    padding: 30px; /* 안쪽 여백 */
+    line-height: 1.8; /* 줄 간격 넉넉하게 */
+    color: #444;
+}
+.research-box p {
+    margin: 0 0 15px 0; /* 문단 사이 간격 */
+}
+.research-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* (기존 유지) '완료한 연구' 목록 스타일 */
+#completed ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+#completed ul li {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
 .content-section p {
     font-size: 16px;
     line-height: 1.8;
@@ -534,7 +656,7 @@ footer p {
 .lecture-list li {
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 20px 25px;
     margin-bottom: 20px;
 }
@@ -577,7 +699,7 @@ footer p {
     background-color: #ffffff;
     padding: 30px;
     border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 /* (수정) 지도 박스 */
@@ -588,7 +710,7 @@ footer p {
     background-color: #ffffff;
     padding: 30px;
     border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 /* (유지) 제목 스타일 */
@@ -611,7 +733,7 @@ footer p {
     width: 100%;
     height: 450px;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 
@@ -669,5 +791,32 @@ footer p {
         height: 100%;
     }
     /* (--- 여기까지 추가 ---) */
+
+    /* (Index Page 반응형 부분에 추가) */
+    .keywords-grid {
+        flex-direction: column; /* 세로로 쌓기 */
+    }
+    .keyword-item {
+        margin-bottom: 15px;
+    }
+
+    /* (Index Page - News 반응형 추가) */
+    .news-list li {
+        flex-direction: column; /* 세로로 쌓기 */
+        align-items: flex-start; /* 왼쪽 정렬 */
+    }
+    .news-date {
+        flex-direction: row; /* 날짜는 가로로 (2025 11.16) */
+        border-right: none; /* 구분선 제거 */
+        margin-bottom: 10px;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+    .news-content {
+        width: 100%;
+    }
+    .news-badge {
+        margin-bottom: 5px; /* 뱃지와 제목 사이 간격 */
+    }
     
 }

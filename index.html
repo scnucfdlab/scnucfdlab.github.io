@@ -28,56 +28,15 @@
                      </a>
                  </div>
                   <!-- (★모든 HTML 파일의 이 부분을 교체하세요★) -->
-<nav>
-    <ul>
-        <!-- 1. 구성원 (하위 메뉴 있음) -->
-        <li class="has-dropdown">
-            <a href="people.html">구성원</a>
-            <ul class="dropdown-menu">
-                <li><a href="people.html#professor">교수</a></li>
-                <li><a href="people.html#students">재학생</a></li>
-                <li><a href="people.html#alumni">졸업생</a></li>
-            </ul>
-        </li>
-
-        <!-- 2. 연구주제 (하위 메뉴 있음) -->
-        <li class="has-dropdown">
-            <a href="research.html">연구주제</a>
-            <ul class="dropdown-menu">
-                <!-- (클릭 시 #research-a (진행중 연구 A)로 이동) -->
-                <li><a href="research.html#research-a">진행중인 연구</a></li> 
-                <li><a href="research.html#completed">완료한 연구</a></li>
-            </ul>
-        </li>
-
-        <!-- 3. 연구논문 (하위 메뉴 있음) -->
-        <li class="has-dropdown">
-            <a href="publications.html">연구논문</a>
-            <ul class="dropdown-menu">
-                <li><a href="publications.html#int-journals">국제 학술지</a></li>
-                <li><a href="publications.html#dom-journals">국내 학술지</a></li>
-                <li><a href="publications.html#int-conferences">국제 학회</a></li>
-                <li><a href="publications.html#dom-conferences">국내 학회</a></li>
-                <li><a href="publications.html#patents">특허</a></li>
-            </ul>
-        </li>
-
-        <!-- 4. 강의 (하위 메뉴 있음) -->
-        <li class="has-dropdown">
-            <a href="lecture.html">강의</a>
-            <ul class="dropdown-menu">
-                <li><a href="lecture.html#lecture-main">강의 소개</a></li>
-                <li><a href="lecture.html#undergrad-1">대학교 강의</a></li>
-                <li><a href="lecture.html#grad-1">대학원 강의</a></li>
-            </ul>
-        </li>
-        
-        <!-- 5. Contact (하위 메뉴 없음) -->
-        <li>
-            <a href="contact.html">Contact</a>
-        </li>
-    </ul>
-</nav>
+                <nav>
+                     <ul>
+                         <li><a href="people.html">구성원</a></li>
+                         <li><a href="research.html">연구주제</a></li>
+                         <li><a href="publications.html">연구논문</a></li>
+                         <li><a href="lecture.html">강의</a></li>
+                         <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
              </div>
         </header>
 
@@ -87,30 +46,82 @@
 
         <main>
             <section id="about">
-                <div class="about-box">
-                    <h2>About CFD Lab</h2>
-                    <p>
-                        우리 연구실은 복잡한 유체 흐름 현상을 컴퓨터 시뮬레이션을 통해 분석 및 예측하는 연구를 합니다.<br>
-                        이론과 실제를 융합하여 혁신적인 솔루션을 제시하고, 미래 기술 발전에 기여하는 것을 목표로 합니다.
-                    </p>
-                </div>
-            </section>
+    <div class="about-box">
+        <h2>About CFD Lab</h2>
+        <p class="about-intro">
+            전산유체역학 연구실은 시뮬레이션을 통해 보이지 않는 흐름을 가시화하고, 
+            <strong>미래 기술의 해답</strong>을 찾습니다.
+        </p>
+        
+        <!-- (신규) 2단 키워드 그리드 -->
+        <div class="keywords-grid">
+            <div class="keyword-item">
+                <div class="keyword-icon">🌊</div>
+                <h3>유체 역학</h3>
+                <p>난류, 다상 유동 등<br>복잡한 유동 현상 해석</p>
+            </div>
+            <div class="keyword-item">
+                <div class="keyword-icon">🔥</div>
+                <h3>열전달</h3>
+                <p>에너지 효율 향상을 위한<br>열전달 메커니즘 연구</p>
+            </div>
+        </div>
+    </div>
+</section>
 
             <section id="news">
-                <h2>Recent News</h2>
-                <ul>
-                    <li>[2025.11.16] OOO 학생, XXX 학회에서 우수 논문상 수상!</li>
-                    <li>[2025.10.01] OOO 교수님, YYY 프로젝트 수주</li>
-                    <li>[2025.10.01] OOO 교수님, YYY 프로젝트 수주</li>
-                    <li>[2025.10.01] OOO 교수님, YYY 프로젝트 수주</li>
-                    <li>[2025.10.01] OOO 교수님, YYY 프로젝트 수주</li>
-                    <li>[2025.10.01] OOO 교수님, YYY 프로젝트 수주</li>
-                    <li>[2025.10.01] OOO 교수님, YYY 프로젝트 수주</li>
-                    <li>[2025.10.01] OOO 교수님, YYY 프로젝트 수주</li>
-                    <li>[2025.10.01] OOO 교수님, YYY 프로젝트 수주</li>
-                    <li>[2025.10.01] OOO 교수님, YYY 프로젝트 수주</li>
-                </ul>
-            </section>
+    <h2>Recent News</h2>
+    <ul class="news-list">
+        
+        <!-- 뉴스 항목 1 (수상) -->
+        <li>
+            <div class="news-date">
+                <span class="year">2025</span>
+                <span class="date">11.16</span>
+            </div>
+            <div class="news-content">
+                <span class="news-badge award">수상</span>
+                <span class="news-title">OOO 학생, XXX 학회에서 우수 논문상 수상!</span>
+            </div>
+        </li>
+
+        <!-- 뉴스 항목 2 (프로젝트) -->
+        <li>
+            <div class="news-date">
+                <span class="year">2025</span>
+                <span class="date">10.01</span>
+            </div>
+            <div class="news-content">
+                <span class="news-badge project">프로젝트</span>
+                <span class="news-title">OOO 교수님, 차세대 유체 해석 알고리즘 개발 과제 선정</span>
+            </div>
+        </li>
+
+        <!-- 뉴스 항목 3 (학회) -->
+        <li>
+            <div class="news-date">
+                <span class="year">2025</span>
+                <span class="date">09.15</span>
+            </div>
+            <div class="news-content">
+                <span class="news-badge conference">학회</span>
+                <span class="news-title">2025년도 한국전산유체공학회 추계 학술대회 참가 및 발표</span>
+            </div>
+        </li>
+
+        <!-- 뉴스 항목 4 (기타) -->
+        <li>
+            <div class="news-date">
+                <span class="year">2025</span>
+                <span class="date">08.20</span>
+            </div>
+            <div class="news-content">
+                <span class="news-title">2025년도 후기 대학원 신입생 모집 안내</span>
+            </div>
+        </li>
+
+    </ul>
+</section>
         </main>
 
     </div> 

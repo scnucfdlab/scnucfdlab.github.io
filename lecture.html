@@ -27,57 +27,15 @@
                          <img src="images/lab_logo.png" alt="전산유체역학 연구실 로고" class="header-logo">
                      </a>
                  </div>
-                  <!-- (★모든 HTML 파일의 이 부분을 교체하세요★) -->
-<nav>
-    <ul>
-        <!-- 1. 구성원 (하위 메뉴 있음) -->
-        <li class="has-dropdown">
-            <a href="people.html">구성원</a>
-            <ul class="dropdown-menu">
-                <li><a href="people.html#professor">교수</a></li>
-                <li><a href="people.html#students">재학생</a></li>
-                <li><a href="people.html#alumni">졸업생</a></li>
-            </ul>
-        </li>
-
-        <!-- 2. 연구주제 (하위 메뉴 있음) -->
-        <li class="has-dropdown">
-            <a href="research.html">연구주제</a>
-            <ul class="dropdown-menu">
-                <!-- (클릭 시 #research-a (진행중 연구 A)로 이동) -->
-                <li><a href="research.html#research-a">진행중인 연구</a></li> 
-                <li><a href="research.html#completed">완료한 연구</a></li>
-            </ul>
-        </li>
-
-        <!-- 3. 연구논문 (하위 메뉴 있음) -->
-        <li class="has-dropdown">
-            <a href="publications.html">연구논문</a>
-            <ul class="dropdown-menu">
-                <li><a href="publications.html#int-journals">국제 학술지</a></li>
-                <li><a href="publications.html#dom-journals">국내 학술지</a></li>
-                <li><a href="publications.html#int-conferences">국제 학회</a></li>
-                <li><a href="publications.html#dom-conferences">국내 학회</a></li>
-                <li><a href="publications.html#patents">특허</a></li>
-            </ul>
-        </li>
-
-        <!-- 4. 강의 (하위 메뉴 있음) -->
-        <li class="has-dropdown">
-            <a href="lecture.html">강의</a>
-            <ul class="dropdown-menu">
-                <li><a href="lecture.html#lecture-main">강의 소개</a></li>
-                <li><a href="lecture.html#undergrad-1">대학교 강의</a></li>
-                <li><a href="lecture.html#grad-1">대학원 강의</a></li>
-            </ul>
-        </li>
-        
-        <!-- 5. Contact (하위 메뉴 없음) -->
-        <li>
-            <a href="contact.html">Contact</a>
-        </li>
-    </ul>
-</nav>
+                  <nav>
+                     <ul>
+                         <li><a href="people.html">구성원</a></li>
+                          <li><a href="research.html">연구주제</a></li>
+                         <li><a href="publications.html">연구논문</a></li>
+                         <li><a href="lecture.html">강의</a></li>
+                         <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
              </div>
         </header>
 
@@ -138,7 +96,7 @@
                     
                     <section id="lecture-main" class="content-section">
                         <h3>개설 강의</h3>
-                        <p>현재 1, 2학기에 개설된 주요 강의 목록입니다.<br>자세한 내용은 왼쪽 메뉴를 선택하여 확인하세요.</p>
+                        <p>현재 대학교 및 대학원에서 진행하는 주요 강의 목록입니다.<br>자세한 내용은 왼쪽 메뉴를 선택하여 확인하세요.</p>
                         
                         <ul class="lecture-list">
                             <li>
@@ -286,29 +244,6 @@
             
             document.getElementById('current-location').textContent = locationText;
         }
-        // ----------------------------------------------------
-    // (★ 이 부분을 복사해서 추가하세요 ★)
-    // ----------------------------------------------------
-    // 페이지가 로드되었을 때 URL의 해시(#)를 확인하는 스크립트
-    document.addEventListener('DOMContentLoaded', function() {
-        // 1. 현재 URL에서 해시(#) 값을 가져옵니다 (예: "#students")
-        const hash = window.location.hash;
-        
-        if (hash) {
-            // 2. 해시 값에서 '#'을 뺀 ID를 구합니다 (예: "students")
-            const targetId = hash.substring(1); 
-            
-            // 3. 사이드바에서 해당 ID를 가진 링크를 찾습니다.
-            // (예: onclick="showSection('students', this)")
-            const targetLink = document.querySelector(`.people-sidebar a[onclick*="'${targetId}'"]`);
-            
-            if (targetLink) {
-                // 4. 링크를 찾았다면, (사람 대신) 코드가 직접 클릭합니다.
-                targetLink.click();
-            }
-        }
-    });
-    // ---------------------------------------------------
     </script>
     
 </body>

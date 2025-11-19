@@ -27,57 +27,15 @@
                          <img src="images/lab_logo.png" alt="전산유체역학 연구실 로고" class="header-logo">
                      </a>
                  </div>
-                  <!-- (★모든 HTML 파일의 이 부분을 교체하세요★) -->
-<nav>
-    <ul>
-        <!-- 1. 구성원 (하위 메뉴 있음) -->
-        <li class="has-dropdown">
-            <a href="people.html">구성원</a>
-            <ul class="dropdown-menu">
-                <li><a href="people.html#professor">교수</a></li>
-                <li><a href="people.html#students">재학생</a></li>
-                <li><a href="people.html#alumni">졸업생</a></li>
-            </ul>
-        </li>
-
-        <!-- 2. 연구주제 (하위 메뉴 있음) -->
-        <li class="has-dropdown">
-            <a href="research.html">연구주제</a>
-            <ul class="dropdown-menu">
-                <!-- (클릭 시 #research-a (진행중 연구 A)로 이동) -->
-                <li><a href="research.html#research-a">진행중인 연구</a></li> 
-                <li><a href="research.html#completed">완료한 연구</a></li>
-            </ul>
-        </li>
-
-        <!-- 3. 연구논문 (하위 메뉴 있음) -->
-        <li class="has-dropdown">
-            <a href="publications.html">연구논문</a>
-            <ul class="dropdown-menu">
-                <li><a href="publications.html#int-journals">국제 학술지</a></li>
-                <li><a href="publications.html#dom-journals">국내 학술지</a></li>
-                <li><a href="publications.html#int-conferences">국제 학회</a></li>
-                <li><a href="publications.html#dom-conferences">국내 학회</a></li>
-                <li><a href="publications.html#patents">특허</a></li>
-            </ul>
-        </li>
-
-        <!-- 4. 강의 (하위 메뉴 있음) -->
-        <li class="has-dropdown">
-            <a href="lecture.html">강의</a>
-            <ul class="dropdown-menu">
-                <li><a href="lecture.html#lecture-main">강의 소개</a></li>
-                <li><a href="lecture.html#undergrad-1">대학교 강의</a></li>
-                <li><a href="lecture.html#grad-1">대학원 강의</a></li>
-            </ul>
-        </li>
-        
-        <!-- 5. Contact (하위 메뉴 없음) -->
-        <li>
-            <a href="contact.html">Contact</a>
-        </li>
-    </ul>
-</nav>
+                  <nav>
+                     <ul>
+                         <li><a href="people.html">구성원</a></li>
+                          <li><a href="research.html">연구주제</a></li>
+                         <li><a href="publications.html">연구논문</a></li>
+                         <li><a href="lecture.html">강의</a></li>
+                         <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
              </div>
         </header>
 
@@ -124,29 +82,49 @@
                 
                 <div class="people-content">
                     
-                    <section id="research-a" class="content-section">
-                        <h3>진행중인 연구 A: [연구 A의 전체 제목]</h3>
-                        
-                        <img src="images/research_a.jpg" alt="진행중인 연구 A 대표 이미지" class="research-image">
-                        
-                        <p>이곳에 '진행중인 연구 A'에 대한 자세한 설명을 작성합니다. 연구 배경, 목표, 현재 진행 상황 등을 서술할 수 있습니다.</p>
-                        <p>관련 논문이나 프로젝트 링크를 추가할 수도 있습니다.</p>
-                    </section>
-                    
-                    <section id="research-b" class="content-section hidden">
-                        <h3>진행중인 연구 B: [연구 B의 전체 제목]</h3>
-                        <img src="images/research_b.jpg" alt="진행중인 연구 B 대표 이미지" class="research-image">
-                        <p>이곳에 '진행중인 연구 B'에 대한 자세한 설명을 작성합니다.</p>
-                    </section>
-                    
-                    <section id="research-c" class="content-section hidden">
-                        <h3>진행중인 연구 C: [연구 C의 전체 제목]</h3>
-                        <img src="images/research_c.jpg" alt="진행중인 연구 C 대표 이미지" class="research-image">
-                        <p>이곳에 '진행중인 연구 C'에 대한 자세한 설명을 작성합니다.</p>
-                    </section>
+                    <!-- 연구 A -->
+<section id="research-a" class="content-section">
+    <h3>진행중인 연구 A: [연구 A의 전체 제목]</h3>
+    
+    <!-- 이미지는 박스 위에 꽉 차게 배치 -->
+    <img src="images/research_a.jpg" alt="연구 A 이미지" class="research-image" onerror="this.style.display='none'">
+    
+    <!-- 설명글을 .research-box 로 감싸줍니다 -->
+    <div class="research-box">
+        <p>
+            이곳에 연구 A에 대한 상세 설명을 작성하세요.<br>
+            연구의 목적, 시뮬레이션 방법, 현재 진행 상황 등을 기술합니다.
+        </p>
+        <p>
+            필요하다면 두 번째 문단을 이렇게 추가하여 내용을 구분할 수 있습니다.<br>
+            기대 효과나 향후 계획 등을 적어주세요.
+        </p>
+    </div>
+</section>
+
+<!-- 연구 B (동일하게 적용) -->
+<section id="research-b" class="content-section hidden">
+    <h3>진행중인 연구 B: [제목 입력]</h3>
+    <img src="images/research_b.jpg" alt="연구 B 이미지" class="research-image" onerror="this.style.display='none'">
+    
+    <div class="research-box">
+        <p>이곳에 연구 B에 대한 설명을 작성하세요.</p>
+    </div>
+</section>
+
+<!-- 연구 C (동일하게 적용) -->
+<section id="research-c" class="content-section hidden">
+    <h3>진행중인 연구 C: [제목 입력]</h3>
+    <img src="images/research_c.jpg" alt="연구 C 이미지" class="research-image" onerror="this.style.display='none'">
+    
+    <div class="research-box">
+        <p>이곳에 연구 C에 대한 설명을 작성하세요.</p>
+    </div>
+</section>
 
                     <section id="completed" class="content-section hidden">
                         <h3>완료한 연구</h3>
+                        <div class="research-box">
                         <ul>
                             <li>회전하는 블레이드 주위의 유동가시화 및 전산유동해석</li>
                             <li>덕트형상에 따른 동축반전 로터블레이드 주위의 전산유동해석</li>
@@ -161,6 +139,7 @@
                             <li>개방형 구조의 진동형 히트파이프의 응축부 길이에 따른 추력 및 유동 가시화</li>
                             <li>전산 해석에서 압축성 작동유체의 상변화와 고체 벽 영역이 진동형 히트파이프에 미치는 영향</li>
                         </ul>
+                        </div>
                     </section>
                     
                 </div>
@@ -175,62 +154,49 @@
     </footer>
 
     <script>
-        // 1. 탭을 보여주는 함수
         function showSection(sectionId, clickedLink) {
+            // 1. 모든 콘텐츠 섹션을 숨깁니다.
             document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.add('hidden');
             });
             
-            const targetSection = document.getElementById(sectionId);
-            if (targetSection) {
-                targetSection.classList.remove('hidden');
-            }
+            // 2. 클릭된 섹션만 보여줍니다.
+            document.getElementById(sectionId).classList.remove('hidden');
             
-            document.querySelectorAll('.sidebar-link').forEach(link => {
+            // 3. 사이드바의 '모든' 링크(하위 메뉴 포함)에서 'active' 클래스를 제거합니다.
+            document.querySelectorAll('.people-sidebar a').forEach(link => {
                 link.classList.remove('active');
             });
             
-            if (clickedLink) {
-                clickedLink.classList.add('active');
+            // 4. 클릭된 링크에만 'active' 클래스를 추가합니다.
+            clickedLink.classList.add('active');
+
+            // 5. (수정됨) 현재 위치(breadcrumb) 텍스트 변경
+            let locationText = "";
+            const childText = clickedLink.textContent.replace('>', '').trim();
+            
+            // 클릭된 링크가 하위 메뉴(.sub-menu) 안에 있는지 확인
+            const subMenu = clickedLink.closest('.sub-menu');
+            
+            if (subMenu) {
+                // 하위 메뉴가 맞다면 (예: A)
+                // 부모 메뉴(.has-submenu)를 찾아서
+                const parentLi = subMenu.closest('.has-submenu');
+                // 부모 메뉴의 링크(<a>) 텍스트(예: 진행중인 연구)를 가져옵니다.
+                const parentLink = parentLi.querySelector(':scope > a');
+                const parentText = parentLink.textContent.replace('>', '').trim();
                 
-                // 하위 메뉴 안에 있다면 펼쳐주기
-                const subMenu = clickedLink.closest('.sub-menu');
-                if (subMenu) {
-                    subMenu.style.display = 'block';
-                }
-
-                let locationText = clickedLink.textContent.replace('>', '').trim();
-                // 부모 메뉴 텍스트 찾기 (Breadcrumb용)
-                const parentLi = clickedLink.closest('.has-submenu');
-                if (parentLi) {
-                    const parentLink = parentLi.querySelector(':scope > a'); // 직계 자식 a 태그만
-                    if (parentLink) {
-                         const parentText = parentLink.textContent.replace('>', '').trim();
-                         locationText = parentText + " / " + locationText;
-                    }
-                }
-                document.getElementById('current-location').textContent = locationText;
-            }
-        }
-
-        // 2. 해시 확인 및 탭 열기 함수
-        function checkHashAndShowSection() {
-            const hash = window.location.hash; // 예: "#research-b"
-            if (hash) {
-                const targetId = hash.substring(1); 
-                const targetLink = document.querySelector(`.people-sidebar a[onclick*="'${targetId}'"]`);
-                if (targetLink) {
-                    showSection(targetId, targetLink);
-                }
+                // 텍스트를 조합합니다. (예: "진행중인 연구 / A")
+                locationText = parentText + " / " + childText;
             } else {
-                // (★수정됨★) 기본값: 진행중인 연구 A (research-a)
-                const defaultLink = document.querySelector(`.people-sidebar a[onclick*="'research-a'"]`);
-                if(defaultLink) showSection('research-a', defaultLink);
+                // 하위 메뉴가 아니라면 (예: 완료한 연구)
+                // 클릭된 링크의 텍스트만 사용합니다.
+                locationText = childText;
             }
+            
+            // <span> 태그의 내용을 변경합니다.
+            document.getElementById('current-location').textContent = locationText;
         }
-
-        document.addEventListener('DOMContentLoaded', checkHashAndShowSection);
-        window.addEventListener('hashchange', checkHashAndShowSection);
     </script>
 </body>
 </html>

@@ -27,57 +27,15 @@
                          <img src="images/lab_logo.png" alt="전산유체역학 연구실 로고" class="header-logo">
                      </a>
                  </div>
-                  <!-- (★모든 HTML 파일의 이 부분을 교체하세요★) -->
-<nav>
-    <ul>
-        <!-- 1. 구성원 (하위 메뉴 있음) -->
-        <li class="has-dropdown">
-            <a href="people.html">구성원</a>
-            <ul class="dropdown-menu">
-                <li><a href="people.html#professor">교수</a></li>
-                <li><a href="people.html#students">재학생</a></li>
-                <li><a href="people.html#alumni">졸업생</a></li>
-            </ul>
-        </li>
-
-        <!-- 2. 연구주제 (하위 메뉴 있음) -->
-        <li class="has-dropdown">
-            <a href="research.html">연구주제</a>
-            <ul class="dropdown-menu">
-                <!-- (클릭 시 #research-a (진행중 연구 A)로 이동) -->
-                <li><a href="research.html#research-a">진행중인 연구</a></li> 
-                <li><a href="research.html#completed">완료한 연구</a></li>
-            </ul>
-        </li>
-
-        <!-- 3. 연구논문 (하위 메뉴 있음) -->
-        <li class="has-dropdown">
-            <a href="publications.html">연구논문</a>
-            <ul class="dropdown-menu">
-                <li><a href="publications.html#int-journals">국제 학술지</a></li>
-                <li><a href="publications.html#dom-journals">국내 학술지</a></li>
-                <li><a href="publications.html#int-conferences">국제 학회</a></li>
-                <li><a href="publications.html#dom-conferences">국내 학회</a></li>
-                <li><a href="publications.html#patents">특허</a></li>
-            </ul>
-        </li>
-
-        <!-- 4. 강의 (하위 메뉴 있음) -->
-        <li class="has-dropdown">
-            <a href="lecture.html">강의</a>
-            <ul class="dropdown-menu">
-                <li><a href="lecture.html#lecture-main">강의 소개</a></li>
-                <li><a href="lecture.html#undergrad-1">대학교 강의</a></li>
-                <li><a href="lecture.html#grad-1">대학원 강의</a></li>
-            </ul>
-        </li>
-        
-        <!-- 5. Contact (하위 메뉴 없음) -->
-        <li>
-            <a href="contact.html">Contact</a>
-        </li>
-    </ul>
-</nav>
+                  <nav>
+                     <ul>
+                         <li><a href="people.html">구성원</a></li>
+                          <li><a href="research.html">연구주제</a></li>
+                         <li><a href="publications.html">연구논문</a></li>
+                         <li><a href="lecture.html">강의</a></li>
+                         <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
              </div>
         </header>
 
@@ -213,57 +171,48 @@
 
     <script>
         function showSection(sectionId, clickedLink) {
-            //모든 섹션 숨기기 시작
+            // 1. 모든 콘텐츠 섹션을 숨깁니다.
             document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.add('hidden');
             });
-            //모든 섹션 숨기기 종료
             
-            //현재 선택된 섹션 보여주기 시작
+            // 2. 클릭된 섹션만 보여줍니다.
             document.getElementById(sectionId).classList.remove('hidden');
-            //현재 선택된 섹션 보여주기 종료
-
-            //사이드바 활성화 상태 초기화 시작
-            document.querySelectorAll('.sidebar-link').forEach(link => {
+            
+            // 3. 사이드바의 '모든' 링크(하위 메뉴 포함)에서 'active' 클래스를 제거합니다.
+            document.querySelectorAll('.people-sidebar a').forEach(link => {
                 link.classList.remove('active');
             });
-            //사이드바 활성화 상태 초기화 종료
             
-            //클릭한 링크에만 현재 선택된 메뉴임을 표시(파란색) 시작
+            // 4. 클릭된 링크에만 'active' 클래스를 추가합니다.
             clickedLink.classList.add('active');
-            //클릭한 링크에만 현재 선택된 메뉴임을 표시(파란색) 종료
 
-            //현재 위치(Breadcrumb) 텍스트 변경 시작
+            // 5. (수정됨) 현재 위치(breadcrumb) 텍스트 변경
             let locationText = "";
             const childText = clickedLink.textContent.replace('>', '').trim();
+            
+            // 클릭된 링크가 하위 메뉴(.sub-menu) 안에 있는지 확인
             const subMenu = clickedLink.closest('.sub-menu');
             
             if (subMenu) {
+                // 하위 메뉴가 맞다면 (예: International Journals)
+                // 부모 메뉴(.has-submenu)를 찾아서
                 const parentLi = subMenu.closest('.has-submenu');
+                // 부모 메뉴의 링크(<a>) 텍스트(예: Journals)를 가져옵니다.
                 const parentLink = parentLi.querySelector(':scope > a');
                 const parentText = parentLink.textContent.replace('>', '').trim();
+                
+                // 텍스트를 조합합니다. (예: "Journals / International Journals")
                 locationText = parentText + " / " + childText;
             } else {
+                // 하위 메뉴가 아니라면 (예: Patents)
+                // 클릭된 링크의 텍스트만 사용합니다.
                 locationText = childText;
             }
+            
+            // <span> 태그의 내용을 변경합니다.
             document.getElementById('current-location').textContent = locationText;
         }
-            ////현재 위치(Breadcrumb) 텍스트 변경 종료
-
-    
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const hash = window.location.hash;
-        
-        if (hash) {
-            const targetId = hash.substring(1); 
-            const targetLink = document.querySelector(`.people-sidebar a[onclick*="'${targetId}'"]`);
-            
-            if (targetLink) {
-                targetLink.click();
-            }
-        }
-    });
     </script>
 </body>
 </html>
